@@ -41,12 +41,12 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" graphicTextGap="0.0" mnemonicParsing="false" onAction="#addMusica" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #E4AADF;" text="Salvar" textFill="WHITE">
+            <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" graphicTextGap="0.0" mnemonicParsing="false" onAction="#addMusica" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #E4AADF; -fx-background-radius: 20;" text="Salvar" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" graphicTextGap="0.0" mnemonicParsing="false" onAction="#limpar" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #E4AADF;" text="Resetar" textFill="WHITE">
+            <Button alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" graphicTextGap="0.0" mnemonicParsing="false" onAction="#limpar" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #E4AADF; -fx-background-radius: 20;" text="Resetar" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

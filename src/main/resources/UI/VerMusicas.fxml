@@ -23,19 +23,19 @@
             </Label>
          </children>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="200.0" spacing="20.0">
          <children>
-            <ListView fx:id="lista" prefHeight="200.0" prefWidth="1300.0" />
+            <ListView fx:id="lista" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="1300.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#carregarletra" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #E4AADF;" text="Carregar Musica" textFill="WHITE">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#carregarletra" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #E4AADF; -fx-background-radius: 20;" text="Carregar Musica" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#deletarmusica" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #E4AADF;" text="Deletar Musica" textFill="WHITE">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#deletarmusica" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #E4AADF; -fx-background-radius: 20;" text="Deletar Musica" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

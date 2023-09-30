@@ -53,6 +53,8 @@ public class Home extends Application {
     protected void CriarExcercicio()throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CriarExcercicio.fxml"));
         Parent root = loader.load();
+        CriarExcercicio criarExcercicio = loader.getController();
+        criarExcercicio.listar();
         sp.getChildren().clear();
         sp.getChildren().add(root);
     }
