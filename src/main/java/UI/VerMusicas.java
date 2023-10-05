@@ -24,9 +24,7 @@ public class VerMusicas extends Application {
     @FXML
     private TextArea carregarletrafield;
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+
 
     @Override
     public void start(Stage stage) throws IOException {

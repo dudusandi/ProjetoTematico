@@ -29,10 +29,6 @@ public class CriarMusica extends Application {
         sqlite.conectar();
     }
 
-    public static void main(String[] args) {
-
-        launch();
-    }
 
     @FXML
     private TextArea letra;

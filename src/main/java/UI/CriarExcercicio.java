@@ -15,15 +15,10 @@ import java.util.*;
 
 public class CriarExcercicio extends Application {
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+
 
     @Override
     public void start(Stage stage) throws IOException {
-
-
-
     }
 
     @FXML
