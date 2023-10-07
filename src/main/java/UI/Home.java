@@ -1,6 +1,7 @@
 package UI;
 
-import SQL.Sqlite;
+import Engine.Exercicio;
+import Engine.Persistencia;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,8 +26,8 @@ public class Home extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();
-        Sqlite sqlite = new Sqlite();
-        sqlite.conectar();
+        Persistencia persistencia = new Persistencia();
+        persistencia.conectaBanco();
 
     }
 
@@ -53,8 +54,8 @@ public class Home extends Application {
     protected void CriarExcercicio()throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CriarExcercicio.fxml"));
         Parent root = loader.load();
-        CriarExcercicio criarExcercicio = loader.getController();
-        criarExcercicio.listar();
+        CriarExercicio criarExercicio = loader.getController();
+        criarExercicio.listar();
         sp.getChildren().clear();
         sp.getChildren().add(root);
     }

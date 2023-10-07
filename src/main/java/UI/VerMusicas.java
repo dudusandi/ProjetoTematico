@@ -1,7 +1,7 @@
 package UI;
 
+import Engine.Musica;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,22 +39,12 @@ public class VerMusicas extends Application {
     }
 
     @FXML
-    public ObservableList<String> listar() {
-        ObservableList<String> items = FXCollections.observableArrayList();
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:base.db")) {
-            Statement statement = connection.createStatement();
-            statement.setQueryTimeout(30);
-            ResultSet rs = statement.executeQuery("SELECT name FROM listaMusicas");
+    public void listar(){
+        Musica musica = new Musica();
+        musica.listar();
+        ObservableList<String> list = musica.getItems();
+        lista.setItems(list);
 
-            while (rs.next()) {
-                String nomeMusica = rs.getString("name");
-                items.add(nomeMusica);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        lista.setItems(items);
-        return items;
     }
 
     @FXML
