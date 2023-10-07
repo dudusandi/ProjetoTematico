@@ -99,6 +99,18 @@ public class Persistencia {
 	}
 
 
+	public boolean deletarMusica(String nomeMusica) {
+		try (Connection connection = DriverManager.getConnection("jdbc:sqlite:base.db")) {
+			String sql = "DELETE FROM listaMusicas WHERE name = ?";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, nomeMusica);
+			int rowsDeleted = preparedStatement.executeUpdate();
+			return rowsDeleted > 0;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 
 
 }
