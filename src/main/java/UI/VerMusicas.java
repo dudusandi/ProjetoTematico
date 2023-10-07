@@ -18,12 +18,12 @@ import java.sql.*;
 
 public class VerMusicas extends Application {
 
+
     @FXML
     private ListView<String> lista;
 
     @FXML
     private TextArea carregarletrafield;
-
 
 
     @Override
@@ -39,7 +39,7 @@ public class VerMusicas extends Application {
     }
 
     @FXML
-    public void listar(){
+    public void listar() {
         Musica musica = new Musica();
         musica.listar();
         ObservableList<String> list = musica.getItems();
@@ -48,30 +48,22 @@ public class VerMusicas extends Application {
     }
 
     @FXML
-    private void carregarletra(){
+    private void carregarletra() {
         String selecao = lista.getSelectionModel().getSelectedItem();
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:base.db");
-            Statement statement = connection.createStatement();
-            statement.setQueryTimeout(30);
-            ResultSet rs = statement.executeQuery("SELECT name, letra FROM listaMusicas");
 
-            while (rs.next()) {
-                String nomeMusica = rs.getString("name");
-                String letraMusica = rs.getString("letra");
+        if (selecao != null) {
+            Musica musica = new Musica();
+            Musica musicaSelecionada = musica.retornaNomeLetra(selecao);
 
-                if (selecao.equals(nomeMusica)) {
-                    carregarletrafield.setText(letraMusica);
-                    break;
-                } else {
-                    carregarletrafield.setText("");
-                }
+            if (musicaSelecionada != null) {
+                String letraMusica = musicaSelecionada.getLetraMusica();
+                carregarletrafield.setText(letraMusica);
+            } else {
+                carregarletrafield.setText("");
             }
-            connection.close();
-        } catch (SQLException error) {
-            System.err.println(error.getMessage());
+        } else {
+            carregarletrafield.setText("");
         }
-
     }
 
     @FXML
@@ -89,10 +81,10 @@ public class VerMusicas extends Application {
                 if (rowsDeleted > 0) {
                     listar();
                     carregarletrafield.setText("");
-                    Notifications.create().text("Musica Deletada") .position(Pos.TOP_CENTER) .hideCloseButton() .showWarning() ;
+                    Notifications.create().text("Musica Deletada").position(Pos.TOP_CENTER).hideCloseButton().showWarning();
                     System.out.println("Musica Deletada");
                 } else {
-                    Notifications.create().text("Nenhuma Musica Deletada") .position(Pos.TOP_CENTER) .hideCloseButton() .showWarning() ;
+                    Notifications.create().text("Nenhuma Musica Deletada").position(Pos.TOP_CENTER).hideCloseButton().showWarning();
                     System.out.println("Nenhuma Musica Deletada");
                 }
                 connection.close();
