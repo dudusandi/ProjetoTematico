@@ -2,8 +2,7 @@ package Engine;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import java.sql.*;
+import java.util.List;
 
 public class Musica {
     private ObservableList<String> items;
@@ -16,18 +15,10 @@ public class Musica {
 
 
     public void listar() {
+        Persistencia persistencia = new Persistencia();
         items = FXCollections.observableArrayList();
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:base.db")) {
-            Statement statement = connection.createStatement();
-            statement.setQueryTimeout(30);
-            ResultSet rs = statement.executeQuery("SELECT name FROM listaMusicas");
-            while (rs.next()) {
-                String nomeMusica = rs.getString("name");
-                items.add(nomeMusica);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        List<String> nomesDasMusicas = persistencia.returnName();
+        items.addAll(nomesDasMusicas);
     }
         public ObservableList<String> getItems() {
             return items;

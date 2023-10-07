@@ -4,6 +4,8 @@ import javafx.geometry.Pos;
 import org.controlsfx.control.Notifications;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Persistencia {
 
@@ -48,6 +50,24 @@ public class Persistencia {
 		} catch (SQLException error){
 			System.out.println(error);
 		}
+	}
+
+
+	public List<String> returnName() {
+		List<String> names = new ArrayList<>();
+
+		try (Connection connection = DriverManager.getConnection("jdbc:sqlite:base.db")) {
+			Statement statement = connection.createStatement();
+			statement.setQueryTimeout(30);
+			ResultSet rs = statement.executeQuery("SELECT name FROM listaMusicas");
+			while (rs.next()) {
+				String nomeMusica = rs.getString("name");
+				names.add(nomeMusica);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return names;
 	}
 
 }
