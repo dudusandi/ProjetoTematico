@@ -1,12 +1,12 @@
 package UI;
 
-import Engine.Exercicio;
 import Engine.Persistencia;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -20,6 +20,9 @@ public class Home extends Application {
     @FXML
     private StackPane sp;
 
+    @FXML
+    private Button btn;
+
     @Override
     public void start(Stage stage)throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Home.fxml"));
@@ -28,6 +31,8 @@ public class Home extends Application {
         stage.show();
         Persistencia persistencia = new Persistencia();
         persistencia.conectaBanco();
+
+
 
     }
 
@@ -52,7 +57,7 @@ public class Home extends Application {
 
     @FXML
     protected void CriarExcercicio()throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("CriarExcercicio.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("NovoExercicio.fxml"));
         Parent root = loader.load();
         CriarExercicio criarExercicio = loader.getController();
         criarExercicio.listar();
@@ -61,11 +66,12 @@ public class Home extends Application {
     }
 
     @FXML
-    protected void VerExcercicio()throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("VerExcercicio.fxml"));
+    protected void CriarPDF()throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("CriarPDF.fxml"));
         Parent root = loader.load();
         sp.getChildren().clear();
         sp.getChildren().add(root);
     }
+
 
 }

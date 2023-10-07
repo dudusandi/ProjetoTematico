@@ -16,7 +16,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="Ver Musicas" textFill="#bf8ec9">
+            <Label text="Lista de Musicas" textFill="#bf8ec9">
                <font>
                   <Font size="40.0" />
                </font>

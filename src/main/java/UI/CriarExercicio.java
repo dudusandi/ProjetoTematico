@@ -1,12 +1,15 @@
 package UI;
 
 import Engine.Exercicio;
+import Engine.Musica;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
 import java.sql.*;
@@ -18,29 +21,20 @@ public class CriarExercicio extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+
     }
 
     @FXML
     private ListView<String> lista;
 
-    @FXML
-    public ObservableList<String> listar() {
-            ObservableList<String> items = FXCollections.observableArrayList();
-            try (Connection connection = DriverManager.getConnection("jdbc:sqlite:base.db")) {
-                Statement statement = connection.createStatement();
-                statement.setQueryTimeout(30);
-                ResultSet rs = statement.executeQuery("SELECT name FROM listaMusicas");
 
-                while (rs.next()) {
-                    String nomeMusica = rs.getString("name");
-                    items.add(nomeMusica);
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            lista.setItems(items);
-            return items;
-        }
+    @FXML
+    public void listar() {
+        Musica musica = new Musica();
+        musica.listar();
+        ObservableList<String> list = musica.getItems();
+        lista.setItems(list);
+    }
 
     @FXML
     private void criarex() {
@@ -89,7 +83,8 @@ public class CriarExercicio extends Application {
 
                     pstmt.executeUpdate();
 
-                    System.out.println("Letra com palavras substituídas por underline e mantendo a formatação original salva no banco de dados.");
+                    Notifications.create().text("Exercicio Criado com Sucesso").position(Pos.TOP_CENTER).hideCloseButton().showWarning();
+
                 }
             }
             connection.close();

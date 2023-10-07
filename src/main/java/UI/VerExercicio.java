@@ -3,7 +3,7 @@ package UI;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-public class VerExcercicio extends Application {
+public class VerExercicio extends Application {
 
 
     @Override

@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class CriarMusica extends Application {
+    Home home = new Home();
 
     String nome;
     String letratmp;
@@ -26,6 +27,7 @@ public class CriarMusica extends Application {
         stageCriar.setScene(scene);
         stageCriar.setTitle("Criar Música");
         stageCriar.show();
+
         Persistencia persistencia = new Persistencia();
         persistencia.conectaBanco();
     }
@@ -51,4 +53,8 @@ public class CriarMusica extends Application {
         letra.setText("");
         nomeMusica.setText("");
     }
+
+
+
+
 }

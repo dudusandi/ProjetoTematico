@@ -9,7 +9,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="Ver Excercicios" textFill="#bf8ec9">
+            <Label text="Criar PDF" textFill="#bf8ec9">
                <font>
                   <Font size="40.0" />
                </font>
