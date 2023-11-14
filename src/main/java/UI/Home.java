@@ -69,6 +69,8 @@ public class Home extends Application {
     protected void CriarPDF()throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CriarPDF.fxml"));
         Parent root = loader.load();
+        CriarPDF criarPDF = loader.getController();
+        criarPDF.listar();
         sp.getChildren().clear();
         sp.getChildren().add(root);
     }
