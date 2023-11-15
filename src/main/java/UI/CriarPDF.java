@@ -38,13 +38,13 @@ public class CriarPDF extends Application {
         PdfDocument pdf = new PdfDocument(new PdfWriter(pdfFile));
         Document document = new Document(pdf);
         String selecao = lista.getSelectionModel().getSelectedItem();
-        document.add(new Paragraph("teste"));
         if (selecao != null) {
             Musica musica = new Musica();
             Musica musicaSelecionada = musica.retornaNomeLetra(selecao);
             if (musicaSelecionada != null) {
                 String letraMusica = musicaSelecionada.getLetraMusica();
-
+                document.add(new Paragraph(letraMusica));
+                document.close();
             } else {
             }
         }
