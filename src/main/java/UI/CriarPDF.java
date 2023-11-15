@@ -43,6 +43,8 @@ public class CriarPDF extends Application {
             Musica musicaSelecionada = musica.retornaNomeLetra(selecao);
             if (musicaSelecionada != null) {
                 String letraMusica = musicaSelecionada.getLetraMusica();
+                String nomeMusica = musicaSelecionada.getNomeMusica();
+                document.add(new Paragraph(nomeMusica));
                 document.add(new Paragraph("Nome do Professor:"));
                 document.add(new Paragraph("Conteudo Gramatical: "));
                 document.add(new Paragraph("Vocabulario: "));
