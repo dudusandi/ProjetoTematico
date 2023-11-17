@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Home">
+<VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Home">
    <children>
       <HBox alignment="TOP_CENTER" minHeight="60.0" prefHeight="100.0" prefWidth="1300.0" spacing="20.0">
          <children>
-            <Button fx:id="btn" alignment="CENTER" mnemonicParsing="false" onAction="#CriarMusica" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #E4AADF; -fx-background-radius: 20;" text="Nova Musica" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+            <Button fx:id="btn" alignment="CENTER" mnemonicParsing="false" onAction="#CriarMusica" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #E4AADF; -fx-background-radius: 20;" text="Criar" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
                <font>
                   <Font size="18.0" />
                </font>
@@ -23,7 +23,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#VerMusica" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #E4AADF; -fx-background-radius: 20;" text="Lista de Musicas" textFill="WHITE" textOverrun="CLIP">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#VerMusica" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #E4AADF; -fx-background-radius: 20;" text="Músicas" textFill="WHITE" textOverrun="CLIP">
                <font>
                   <Font size="18.0" />
                </font>
@@ -31,15 +31,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#CriarExcercicio" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #E4AADF; -fx-background-radius: 20;" text="Novo Exercicio" textFill="WHITE" textOverrun="CLIP">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#CriarPDF" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #E4AADF; -fx-background-radius: 20;" text="Criar PDF" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#CriarPDF" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #E4AADF; -fx-background-radius: 20;" text="PDF" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
                <font>
                   <Font size="18.0" />
                </font>

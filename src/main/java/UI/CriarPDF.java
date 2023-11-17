@@ -7,8 +7,11 @@ import com.itextpdf.layout.element.Paragraph;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
 
@@ -20,10 +23,21 @@ public class CriarPDF extends Application {
 
     }
 
-    public static final String pdfFile = "src/main/teste.pdf";
+    public static final String pdfFile = "PDF/Trabalho.pdf";
 
     @FXML
     private ListView<String> lista;
+
+    @FXML
+    private TextField nomeProfessor;
+
+    @FXML
+    private TextField conteudo;
+
+    @FXML
+    private TextField vocabulario;
+
+
 
     @FXML
     public void listar() {
@@ -45,12 +59,12 @@ public class CriarPDF extends Application {
                 String letraMusica = musicaSelecionada.getLetraMusica();
                 String nomeMusica = musicaSelecionada.getNomeMusica();
                 document.add(new Paragraph(nomeMusica));
-                document.add(new Paragraph("Nome do Professor:"));
-                document.add(new Paragraph("Conteudo Gramatical: "));
-                document.add(new Paragraph("Vocabulario: "));
+                document.add(new Paragraph("Nome do Professor: " + nomeProfessor.getText()));
+                document.add(new Paragraph("Conteúdo Gramatical: " + conteudo.getText()));
+                document.add(new Paragraph("Vocabulário: " + vocabulario.getText()));
                 document.add(new Paragraph(letraMusica));
                 document.close();
-            } else {
+                Notifications.create().text("PDF Criado com Sucesso").position(Pos.TOP_CENTER).hideCloseButton().showWarning();
             }
         }
     }
