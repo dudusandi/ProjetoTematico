@@ -31,9 +31,6 @@ public class Home extends Application {
         stage.show();
         Persistencia persistencia = new Persistencia();
         persistencia.conectaBanco();
-
-
-
     }
 
     @FXML
