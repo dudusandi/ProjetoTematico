@@ -7,8 +7,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Persistencia {
+public class Persistencia implements PersistenciaInterface {
 
+	@Override
 	public void conectaBanco() {
 
 		try {
@@ -29,6 +30,7 @@ public class Persistencia {
 	}
 
 
+	@Override
 	public void gravaMusica(String nomeMusica, String letraMusica) {
 		try {
 			Connection connection = DriverManager.getConnection("jdbc:sqlite:base.db");
@@ -53,6 +55,7 @@ public class Persistencia {
 	}
 
 
+	@Override
 	public List<String> returnName() {
 		List<String> names = new ArrayList<>();
 
@@ -70,6 +73,7 @@ public class Persistencia {
 		return names;
 	}
 
+	@Override
 	public List<Musica> nomes(String nomeMusica) {
 		List<Musica> musicas = new ArrayList<>();
 
@@ -99,6 +103,7 @@ public class Persistencia {
 	}
 
 
+	@Override
 	public boolean deletarMusica(String nomeMusica) {
 		try (Connection connection = DriverManager.getConnection("jdbc:sqlite:base.db")) {
 			String sql = "DELETE FROM listaMusicas WHERE name = ?";

@@ -27,13 +27,13 @@ public class Musica {
     }
 
     public void cadastrarMusica(String nomeMusica, String letraMusica) {
-        Persistencia persistencia = new Persistencia();
+        PersistenciaInterface persistencia = new Persistencia();
         persistencia.gravaMusica(nomeMusica, letraMusica);
     }
 
 
     public void listar() {
-        Persistencia persistencia = new Persistencia();
+        PersistenciaInterface persistencia = new Persistencia();
         items = FXCollections.observableArrayList();
         List<String> nomesDasMusicas = persistencia.returnName();
         items.addAll(nomesDasMusicas);
@@ -45,7 +45,7 @@ public class Musica {
 
 
     public Musica retornaNomeLetra(String nomeMusica) {
-        Persistencia persistencia = new Persistencia();
+        PersistenciaInterface persistencia = new Persistencia();
         List<Musica> musicas = persistencia.nomes(nomeMusica);
         Musica musicaEncontrada = null;
 
