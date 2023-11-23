@@ -32,6 +32,9 @@ public class CriarPDF extends Application {
     private TextField nomeProfessor;
 
     @FXML
+    private TextField nomeAluno;
+
+    @FXML
     private TextField conteudo;
 
     @FXML
@@ -60,6 +63,7 @@ public class CriarPDF extends Application {
                 String nomeMusica = musicaSelecionada.getNomeMusica();
                 document.add(new Paragraph(nomeMusica));
                 document.add(new Paragraph("Nome do Professor: " + nomeProfessor.getText()));
+                document.add(new Paragraph("Nome do Aluno: " + nomeAluno.getText()));
                 document.add(new Paragraph("Conteúdo Gramatical: " + conteudo.getText()));
                 document.add(new Paragraph("Vocabulário: " + vocabulario.getText()));
                 document.add(new Paragraph(letraMusica));
